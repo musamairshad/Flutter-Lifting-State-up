@@ -1,31 +1,26 @@
 import 'package:flutter/material.dart';
 
-class BlueSquare extends StatefulWidget {
-  const BlueSquare({super.key, required this.size});
+class BlueSquare extends StatelessWidget {
+  const BlueSquare({super.key, required this.size, required this.clicks});
   final double size;
-  @override
-  State<BlueSquare> createState() {
-    return _BlueSquareState();
-  }
-}
-
-class _BlueSquareState extends State<BlueSquare> {
-  int clicks = 0;
-
+  final int clicks;
   @override
   Widget build(context) {
     return GestureDetector(
-      onTap: () {
-        setState(() {
-          clicks++;
-        });
-      },
-      child: Container(
-        height: widget.size,
-        width: widget.size,
-        color: Colors.blue,
-        child: Text('$clicks',
-        textAlign: TextAlign.center,
+      onTap: () {},
+      child: Center(
+        child: Container(
+          height: size,
+          width: size,
+          color: Colors.blue,
+          child: Center(
+              child: Text(
+            '$clicks',
+            style: const TextStyle(
+              fontSize: 20,
+              color: Colors.white,
+            ),
+          )),
         ),
       ),
     );
